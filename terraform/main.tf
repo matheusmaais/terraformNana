@@ -1,7 +1,7 @@
 provider "aws" {
     region     = "eu-west-3"
-    access_key = "AKIAXRHFXZKDELIQ6FNA"
-    secret_key = "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"
+    access_key = ""
+    secret_key = ""
 }
 ##########################################
 #Creates a vpc and subnet inside of it
