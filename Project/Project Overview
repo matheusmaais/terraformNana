@@ -1,0 +1,8 @@
+Create a VPC
+Create One Subnet in one AZ
+Connect VPC to internet using internet gateway ( allow traffic )
+Deploy ec2 on aws and run a simple docker container on it
+Create Security Group to access via browser and ssh (firewall)
+
+---
+It's a good practice create infrastructure from scratch ( vpc, subnets etc) 
