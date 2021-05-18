@@ -26,4 +26,4 @@ $terraform destroy -target aws_subnet.dev-subnet-2
 $terraform apply --auto-approve
 $terraform destroy --auto-approve
 $terraform state list
-$terraform show resource.name (good way to get resource atributes) #IT"S VERY USEFULL#
+$terraform state show resource.name (good way to get resource atributes) #IT"S VERY USEFULL#
