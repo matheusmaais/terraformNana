@@ -3,6 +3,6 @@ subnet_cidr_blocks   = "10.0.10.0/24"
 avail_zone           = "eu-west-3b"
 env_prefix           = "dev"
 instance_type        = "t2.micro"
-public_key_location  = "/home/matheus.andrade/.ssh/id_rsa.pub"
-private_key_location = "/home/matheus.andrade/.ssh/id_rsa"
+public_key_location  = ""
+private_key_location = ""
 
