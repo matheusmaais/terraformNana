@@ -77,6 +77,39 @@ resource "aws_instance" "myapp-server" {
 
     ## We cant put this code on a script, obviously you have to create a entry-script.sh!!
     user_data = file("entry-script.sh")
+
+   ######
+   #connection have atributes to connect in THIS(self) ec2 to execute provisioner
+    connection {
+        type        = "ssh"
+        host        = self.public_ip
+        user        = "ec2-user"
+        private_key = file(var.private_key_location)
+    }
+    #we can execute script, but scripts have to be within server.. so:
+    # provisioner"file" {
+    #     source      = "entry-script.sh"
+    #     destination = "/home/ec2-user/entry-script"
+    # }
+
+    # provisioner "remote-exec" {
+    #     script = file("entry-script.sh")
+    # }
+
+    #to execute some commands, we can use "inline"
+    # provisioner "remote-exec" {
+    #     inline = [
+    #         "export ENV=dev",
+    #         "mkdir newdirectory",
+    #         "sudo yum update -y",
+    #     ]
+    # }
+    ##
+
+    ##to execute commands on your localmachine:
+    provisioner "local-exec" {
+        command = "echo ${self.public_ip} > output.txt"
+    }
 }
 
 output "aws_instance_ip" {
